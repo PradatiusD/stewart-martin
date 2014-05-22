@@ -1,19 +1,82 @@
-[one_fourth_first]
-	<a href="">
-		<img src="http://stewartmartin.wpengine.com/wp-content/themes/stewart-martin/images/home-page/logos/Steel-Yard-Logo.png" >
-	</a>
-[/one_fourth_first]
-[one_fourth]
-	<a href="">
-		<img src="http://stewartmartin.wpengine.com/wp-content/themes/stewart-martin/images/home-page/logos/RI-Council-for-the-Humanities-logo.jpg" >
-	</a>
-[/one_fourth]
-[one_fourth]
-	<a href="">
-		<img src="http://stewartmartin.wpengine.com/wp-content/themes/stewart-martin/images/home-page/logos/lincoln-school.jpg" >
-	</a>
-[/one_fourth][one_fourth]
-	<a href="">
-		<img src="http://stewartmartin.wpengine.com/wp-content/themes/stewart-martin/images/home-page/logos/AS220-LOGO.png" >
-	</a>
-[/one_fourth]
+<section id="featuredQuote">
+	<blockquote>
+		Have you ever done something for a long time that you thought you were pretty good at and then you meet someone who you realize can still teach you lots and lots? Stewart Martin has been that guy for me. Stewart is like a great chef who uses a few simple ingredients but who's recipe comes out tasting better than you thought it could. I feel lucky that he teaches at the AS220 Community Darkroom.
+	</blockquote>
+	<cite>
+		Scott Lapham / Photo Coordinator AS220 Youth Program <br>
+		www.as220.org<br>
+	</cite>
+</section>
+<section id="testimonials">
+	<article class="one-fourth first">
+		<a href="Javascript:void(0);">
+			<img src="http://stewartmartin.wpengine.com/wp-content/themes/stewart-martin/images/home-page/logos/Steel-Yard-Logo.png" >
+			<blockquote style="display:none;">
+				Here at the Steel Yard we connect the community to the industrial arts through a variety of programs and events. Stewart has helped us tell the story of everything that happens here by capturing the dramatic moments of art making in action. He has caught the candid and the arranged moments and we are lucky enough to have one of his beautiful Black and White images from our annual Iron Pour hanging above our conference table.  It means so much to us to have high quality images of our programs so we can share what it looks like when artists are really working and community is being built. Thanks Stewart.
+			</blockquote>
+			<cite style="display:none;">
+				Howie Sneider, Executive Director<br>
+				The Steelyard<br>
+			</cite>
+		</a>
+	</article>
+	<article class="one-fourth">
+		<a href="Javascript:void(0);">
+			<img src="http://stewartmartin.wpengine.com/wp-content/themes/stewart-martin/images/home-page/logos/RI-Council-for-the-Humanities-logo.jpg" >
+			<blockquote style="display:none;">
+				Joyful and real, Stewart Martin's photography gets to the heart of an image--the personality of my daughter, the spirit of an event, my outlook as a professional. Stewart is a technical master, but he is easy, open, and fun to work with. He is also a documentary artist, and his dedication to excellence infuses everything he does. I am grateful, and we are all lucky to have him in our community!
+			</blockquote>
+			<cite style="display:none;">
+				Elizabeth Francis, Phd <br>
+				Executive Director, RI Council for the Humanities <br>
+				www.rihumanities.org <br>
+			</cite>
+		</a>
+	</article>
+	<article class="one-fourth">
+		<a href="Javascript:void(0);">
+			<img src="http://stewartmartin.wpengine.com/wp-content/themes/stewart-martin/images/home-page/logos/lincoln-school.jpg" >
+			<blockquote style="display:none;">
+				It is always a pleasure to work with Stewart Martin. He has photographed many events for me. His calm and professional nature makes him easy to work with,  he has a great eye for shots, and he is quick to transfer files after an event. I would highly recommend Stewart.
+			</blockquote>
+			<cite style="display:none;">
+				Elizabeth Hunt<br>
+				Tech Specialist and Webmaster<br>
+				Lincoln School<br>
+			</cite>
+
+		</a>
+	</article>
+	<article class="one-fourth">
+		<a href="Javascript:void(0);">
+			<img src="http://stewartmartin.wpengine.com/wp-content/themes/stewart-martin/images/home-page/logos/AS220-LOGO.png" >
+			<blockquote style="display:none;">
+				Have you ever done something for a long time that you thought you were pretty good at and then you meet someone who you realize can still teach you lots and lots? Stewart Martin has been that guy for me. Stewart is like a great chef who uses a few simple ingredients but who's recipe comes out tasting better than you thought it could. I feel lucky that he teaches at the AS220 Community Darkroom.
+			</blockquote>
+			<cite style="display:none;">
+				Scott Lapham / Photo Coordinator AS220 Youth Program <br>
+				www.as220.org <br>
+			</cite>
+		</a>
+	</article>
+</section>
+<script>
+
+	(function($){
+
+		var $featQuote = $('#featuredQuote');
+
+		var $featBlockQ = $featQuote.find('blockquote');
+		var $featCite   = $featQuote.find('cite');
+		
+		$('#testimonials').find('a').click(function(){
+
+			var $this = $(this);
+			$featBlockQ.html($this.find('blockquote').html());
+			$featCite.html($this.find('cite').html());
+
+		});
+
+	})(jQuery);
+
+</script>
