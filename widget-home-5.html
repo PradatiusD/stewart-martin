@@ -62,20 +62,53 @@
 </section>
 <script>
 
-	(function($){
+	(function testimonialsInterface ($){
 
 		var $featQuote = $('#featuredQuote');
+		var $testimonials = $('#testimonials');
 
 		var $featBlockQ = $featQuote.find('blockquote');
 		var $featCite   = $featQuote.find('cite');
-		
-		$('#testimonials').find('a').click(function(){
+
+		// First create JS object array of quotes
+		var quotes = jQuery.map($testimonials.find('article'), function(obj){
+
+			var $obj = $(obj);
+
+			return {
+				blockquote: $obj.find('blockquote').html(),
+				cite: $obj.find('cite').html()
+			};
+		});
+
+		var i = 0;
+
+		// Cycle quotes and change text if testimonials/quotes are not being hovered
+		function cycleQuotes(){
+
+			var j = i % quotes.length;
+
+			if (!$testimonials.is(":hover") && !$featQuote.is(":hover")){
+
+				$featBlockQ.html(quotes[j].blockquote);
+				$featCite.html(quotes[j].cite);
+				// Need to add hovered css classes to the logos.
+				i++;
+			}
+
+		}
+
+		// Change global index and click on text
+		$testimonials.find('a').click(function(){
 
 			var $this = $(this);
+			i = $(this).index();
 			$featBlockQ.html($this.find('blockquote').html());
 			$featCite.html($this.find('cite').html());
 
 		});
+
+		setInterval(cycleQuotes, 3000);
 
 	})(jQuery);
 
