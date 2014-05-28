@@ -15,7 +15,9 @@
     "tests"
   ],
   "dependencies": {
+    "2884618": "https://gist.github.com/2884618.git",
     "animate.scss": "*",
-    "bourbon": "~4.0.2"
+    "bourbon": "~4.0.2",
+    "bower-bourbon": "~3.1.8"
   }
 }

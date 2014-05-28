@@ -127,8 +127,12 @@ Import Fonts
 
 }
 
-
-
+/*
+SCSS Plugins
+---------------------------------------------------------------------------------------------------- */
+@import "bower_components/animate.scss/scss/animate";
+@import "bower_components/bower-bourbon/bourbon";
+@import "bower_components/2884618/filters.sass";
 
 /*
 HTML5 Reset
@@ -1996,19 +2000,20 @@ Site Footer
 	text-align: right;
 }
 
-section#text-13 img {
-  -webkit-filter: grayscale(1) brightness(1.35);
-  filter: grayscale(1) brightness(1.35);
-  opacity: .4;
+
+section#text-13 {
+
+	img {
+		@include filter(grayscale(1) brightness(1.35));
+		@include transition(all 0.6s ease-in-out);
+		opacity: 0.4;
+
+		&:hover, &.hovered {
+			@include filter(grayscale(0) brightness(1));
+			opacity: 1;
+		}
+	}
 }
-
-section#text-13 a img:hover {
-	filter: grayscale(0) brightness(1);
-	-webkit-filter: grayscale(0) brightness(1);
-	opacity: 1;
-}
-
-
 
 .soliloquy-container .soliloquy-caption-inside {
 	background: black;

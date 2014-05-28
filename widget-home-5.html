@@ -62,7 +62,7 @@
 </section>
 <script>
 
-	(function testimonialsInterface ($){
+	(function testimonials ($){
 
 		var $featQuote = $('#featuredQuote');
 		var $testimonials = $('#testimonials');
@@ -70,8 +70,10 @@
 		var $featBlockQ = $featQuote.find('blockquote');
 		var $featCite   = $featQuote.find('cite');
 
+		var $articles = $testimonials.find('article');
+
 		// First create JS object array of quotes
-		var quotes = jQuery.map($testimonials.find('article'), function(obj){
+		var quotes = jQuery.map($articles, function(obj){
 
 			var $obj = $(obj);
 
@@ -83,16 +85,29 @@
 
 		var i = 0;
 
-		// Cycle quotes and change text if testimonials/quotes are not being hovered
+		// Cycle quotes and change text if testimonials are not being hovered
 		function cycleQuotes(){
 
 			var j = i % quotes.length;
 
 			if (!$testimonials.is(":hover") && !$featQuote.is(":hover")){
 
-				$featBlockQ.html(quotes[j].blockquote);
-				$featCite.html(quotes[j].cite);
-				// Need to add hovered css classes to the logos.
+				$featQuote.addClass('animated fade-down-out');
+
+				setTimeout(function(){
+
+					$featQuote.removeClass('fade-up-in fade-down-out');
+
+					$featBlockQ.html(quotes[j].blockquote);
+					$featCite.html(quotes[j].cite);
+
+					$featQuote.addClass('fade-up-in');
+
+				}, 1000)
+
+				
+				$articles.find('img').removeClass('hovered');
+				$articles.eq(j).find('img').addClass('hovered');
 				i++;
 			}
 
@@ -102,14 +117,18 @@
 		$testimonials.find('a').click(function(){
 
 			var $this = $(this);
-			i = $(this).index();
+			i = $this.index();
+			$testimonials.find('img').removeClass('hovered');
+			$this.find('img').addClass('hovered');
 			$featBlockQ.html($this.find('blockquote').html());
 			$featCite.html($this.find('cite').html());
 
 		});
 
-		setInterval(cycleQuotes, 3000);
+		setInterval(cycleQuotes, 6500);
 
 	})(jQuery);
+
+
 
 </script>
