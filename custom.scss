@@ -671,8 +671,8 @@ span.darklight {
 	padding: 0 0 40px;
 }
 
-.ie8 .#text-4 h4:before,
-.ie8 .#text-4 h4:after {
+.ie8 #text-4 h4:before,
+.ie8 #text-4 h4:after {
   top: -2px;
 }
 
@@ -1022,9 +1022,8 @@ Widgets
 	font-size: 29px;
 	background: none !important;
 	border-radius: 0px;
-	color: #6d6d6d !impotant;}
+	color: #6d6d6d !important;
 }
-
 
 
 aside.header-widget-area .simple-social-icons {
@@ -2200,7 +2199,7 @@ div.workshops {
 	width: 570px;
 	color: black;
 	font-size: 20em;
-	margin-bottom; 20px;
+	margin-bottom: 20px;
 	background: url('http://stewartmartin.wpengine.com/wp-content/uploads/2014/05/workshops1.jpg') center;
 	background-repeat: no-repeat;
 	-webkit-background-size: cover;
