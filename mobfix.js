@@ -1,3 +1,30 @@
+
+(function sideMenu($){
+
+  // Add mobile icon
+  $('.site-header').find('.wrap').append('<a class="fa fa-bars" id="mobileNavOpen" href="Javascript:void(0);"></a>');
+
+  // Create a hidden div that unites all navigation lnks
+  var $hiddenNav = $('<ul id="hiddenNav" style="display:none;"></ul>');
+  var $hiddenNavContent;
+
+  $hiddenNavContent = $('.genesis-nav-menu');
+
+  $hiddenNavContent.children('li').clone().appendTo($hiddenNav);
+
+  $hiddenNav.appendTo($('body'));
+
+  var jPM = $.jPanelMenu({
+    menu: '#hiddenNav',
+    trigger: '#mobileNavOpen',
+    direction: 'right'
+  });
+
+  jPM.on();
+
+})(jQuery);
+
+
 (function correctMobileNavStructure($){
 
   var $menu    = $('#jPanelMenu-menu');
